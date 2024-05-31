@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="sv">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Erik Leijon</title>
+    <link rel="stylesheet" href="style/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="js/script.js"></script>
+</head>
+<body>
+    <header id="navbar">
+        <!-- The navbar that is shown on the smalles devices -->
+        <div class="text-on-img">
+            <h1 class="header-text">
+                <a href="index.html">ERIK LEIJON</a></h1>
+            <h2 class="describing-text">Composer & Sound Designer</h2>
+        </div>
+        <div class="top-nav">
+            <div id="myLinks">
+                <a href="">HOME</a>
+                <a href="#work">MY WORK</a>
+                <!-- Hidden on smalles media querie -->
+                <h1 class="header-large-screen hide-on-sticky">
+                    <a href="index.html">ERIK LEIJON</a>
+                </h1>
+                <a href="about.html">ABOUT</a>
+                <a href="#footer">CONTACT</a>
+            </div>
+            <!-- Hamburger menu for mobile devices -->
+            <div class="hamburger-menu">
+                <a href="javascript:void(0);" class="icon" id="menuIcon" onclick="myFunction()">
+                    <i class="fa fa-bars"></i>
+                </a>
+            </div>
+        </div>
+    </header>
+    <!-- Thumbnail images of the work -->
+    <!-- If img is found in avif format the browser will try to show that, otherwise jpeg -->
+    <div>
+        <h2 class="body-header">SELECTED WORK</h2>
+        <div class="work" id="work">
+            <div class="work-img work-grid1">
+                <a href="show-work.html"><img class="thumbNail" src="images/thumbNail6.jpeg" alt="Thumbnail of Until Dawn"></a>
+            </div>
+            <div class="work-img work-grid2">
+                <a href="show-work2.html"><img class="thumbNail" src="images/thumbNail2.jpeg" alt="Thumbnail of Dreadnought"></a>
+            </div>
+            <div class="work-img work-grid3">
+                <a href="show-work3.html"><img class="thumbNail" src="images/thumbNail3.jpeg" alt="Thumbnail of Kena"></a>
+            </div>
+            <div class="work-img work-grid4">
+                <a href="show-work4.html"><img class="thumbNail" src="images/thumbNail4.jpeg" alt="Thumbnail of Zelda"></a>
+            </div>
+            <div class="work-img work-grid5">
+                <a href="show-work5.html"><img class="thumbNail" src="images/thumbNail5.jpeg" alt="Thumbnail of Gris"></a>
+            </div>
+            <div class="work-img work-grid6">
+                <a href="show-work6.html"><img class="thumbNail" src="images/thumbNail1.jpeg" alt="Thumbnail of Starfall"></a>
+            </div>
+        </div>
+    </div>
+    <!-- Short intro of the about info -->
+    <h2 class="body-header">WHO AM I?</h2>
+    <div class="work-container">
+        <aside class="show-work-item aside-text">
+            <p class="work-text">My name is Erik, a 21-year-old composer and sound designer based in Stockholm, Sweden. I am specializing in game music and dedicated to crafting innovative audio experiences that enhance the game experience. With a strong foundation in composition and sound design, I strive to push the boundaries of interactive audio in the gaming industry <a class="Read-More" href="about.html">[Read more]</a></p>
+        </aside>
+        <aside class="show-work-item aside-video">
+            <a href="about.html">
+                <img class="about-img" src="images/erikImg.png" alt="Image of me, Erik">
+            </a>
+        </aside>
+        <aside class="show-work-item aside-tool">
+            <h2 class="body-header">SERVICES</h2>
+            <ul>
+                <li>Composer</li>
+                <li>Sound design</li>
+                <li>Audio Mixing + Mastering</li>
+                <li>Implementation Wwise</li>
+            </ul>
+        </aside>
+        <aside class="show-work-item aside-tool">
+            <h2 class="body-header">TOOLS & SOFTWARE</h2>
+            <ul>
+                <li>Cubase</li>
+                <li>Reaper</li>
+                <li>Logic Pro X</li>
+                <li>Wwise</li>
+            </ul>
+        </aside>
+    </div>
+    <!-- Button to the page with more info about -->
+    <div class="button-container">
+        <a href="about.html" class="button">MORE ABOUT ME</a>
+    </div>
+    <!-- Sticky email adress, for easy access -->
+    <div class="sticky-mail">
+        <a href="mailto:erik.leijon@icloud.com">erik.leijon@icloud.com</a>
+    </div>
+    <footer id="footer">
+        <div class="footer-text">
+            <h2 class="">CONTACT</h2>
+            <p class="mail"><a href="mailto:erik.leijon@icloud.com">erik.leijon@icloud.com</a></p>
+            <p class="number"><a href="tel:+46727383388">072-738 33 88</a></p>
+            <p class="adress">Stockholm, Sweden</p>
+            <p class="creator">Portfolio created by <a href="https://www.gustavleijon.com/" target="_blank">Gustav Leijon</a></p>
+        </div>
+    </footer>
+</body>
+</html>

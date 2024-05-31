@@ -1,0 +1,769 @@
+/* Get fonts to the website */
+@font-face {
+    font-family: 'Monotserrat';
+    src: url(../fonts/Montserrat/Montserrat-VariableFont_wght.ttf) format('truetype');
+}
+@font-face {
+    font-family: 'Inconsolata';
+    src: url(../fonts/Inconsolata/static/Inconsolata_Condensed-Black.ttf) format('truetype');
+}
+
+/* Sticky menu */
+/* The sticky class is added to the navbar with JS when it reaches its scroll position */
+.sticky {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 80px;
+    background-color: #212427;
+    z-index: 1000;
+}
+.sticky + .content {
+    padding-top: 60px;
+}
+.hide-on-sticky {
+    display: block; /* Visa elementet som block */
+}
+
+.sticky .hide-on-sticky {
+    display: none; /* Hide The "logo" on the sticky menu */
+}
+
+/* Make the mail adress sticky for easy access */
+.sticky-mail {
+    position: fixed;
+    bottom: 10px;
+    right: 10px;
+    background-color: rgba(0, 0, 0, 0.4);
+    padding: 2.5px 5px;
+    z-index: 1000;
+}
+
+.sticky-mail a {
+    color: #90EE90;
+    text-decoration: none;
+}
+
+.sticky-mail a:hover {
+    text-decoration: underline;
+}
+
+
+
+body {
+    font-family: 'Monotserrat';
+}
+/* Font sizes with clamp */
+h2 {
+    font-size: clamp(20px, 0.9vw + 13px, 25px);
+    font-weight: 200;
+}
+/* Styles for the header*/
+.header-text {
+    display: none;
+    font-family: 'Inconsolata';
+    font-size: 45px;
+    margin-top: 8rem;
+}
+/* Makes the header gradient */
+.header-text a {
+    text-decoration: none;
+    background: linear-gradient(#90EE90, #ffffff);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    color: transparent;
+}
+    
+.header-large-screen {
+    display: none;
+    color: #90EE90;
+    font-family: 'Inconsolata';
+    z-index: 1; /* Make sure that the text elements is above the header in z-axel */
+    /* Clamp did not work for some reason */
+    /*font-size: clamp(50px, 1.8vw + 14px, 60px);*/
+    /*font-size: clamp(3.123rem, 1.8vw + 0.875rem, 3.75rem);*/
+}
+header {
+    position: relative;
+    width: 100%;
+    height: 300px;
+    background-image: url(../images/headerImg.png); /* Background img to the header*/
+    background-size: cover;
+}
+header::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8); /* makes the hader background img darker */
+}
+/* Style for the text on the background img */
+.text-on-img {
+    position: absolute;
+    top: 25%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    color: #90EE90;
+    z-index: 1; /* Make sure that the text elements is above the header in z-axel */
+    padding-top: 2rem;
+}
+
+/* Style the navigation menu */
+/* Hide the links inside the navigation menu */
+.top-nav #myLinks {
+    display: none;
+}
+/* Style navigation menu links */
+.top-nav a {
+    color: white;
+    padding: 14px 16px;
+    text-decoration: none;
+    font-size: 17px;
+    font-weight: 400;
+    display: block;
+    z-index: 1; /* Make sure that the text elements is above the header in z-axel */
+    font-family: 'Monotserrat';
+    text-align: center;
+}
+
+.top-nav a:hover {
+    color: #90EE90;
+    transform: scale(1.1);
+}
+/* Style the hamburger menu */
+/* Hide the hamburger menu as default */
+.hamburger-menu {
+    display: none;
+    margin-top: 3rem;
+    height: 100px;
+}
+
+/* Style the hamburger menu icon */
+.icon {
+    margin-top: 2rem;
+}
+.fa-bars:before, .fa-times:before {
+    font-size: 30px;
+}
+.fa-times:before {
+    color: #90EE90;
+}
+
+
+p, h2 {
+    font-family: 'Monotserrat';
+}
+h2 {
+    color: #ffffff;
+}
+
+
+/* Header for the body */
+.body-header {
+    text-align: center;
+    color: #212427;
+    margin-top: 3rem;
+}
+
+/* Styles the img of the works */
+.work {
+    display: flex;
+    flex-flow: row wrap; /* For responsiveness */
+    align-items: center;
+    justify-content: center; /* Center the work-img horizontally */
+    margin-bottom: 1rem;
+}
+.work-img {
+    margin: 5px;
+    overflow: hidden; /* Hides excess content */
+    position: relative;
+}
+.work-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Fills the container and preserves the proportions */
+}
+.work, .index-about, .work-page {
+    margin-top: 1rem;
+}
+.thumbNail {
+    transition: transform .2s;
+}
+/* Makes the images zoom a bit when hoover*/
+/* Changes the cursor to a music icon */
+.thumbNail:hover {
+    transform: scale(1.1);
+    cursor: url('../images/note.svg'), auto;
+}
+
+/* Styles for text about on index page */
+.index-about {
+    display: flex;
+    justify-content: center;
+}
+.img-and-text {
+    display: flex;
+    border: solid 1px green;
+}
+/* styles the lists */
+ul {
+    list-style-type: none;
+    padding: 0;
+    font-family: 'Monotserrat';
+    margin-bottom: 1rem;
+}
+li {
+    margin-bottom: 2rem;
+}
+/* Img of Erik */
+.about-img {
+    background-color: #212427;
+    -webkit-filter: grayscale(100%);
+    filter: grayscale(100%);
+    transition: 1s ease;
+}
+.about-img:hover {
+    background: linear-gradient(#90EE90, #212427);
+    -webkit-filter: grayscale(0%);
+    filter: grayscale(0%);
+    filter: none;
+    transition: 2s ease;
+    -webkit-transform: scale(1.2);
+    -ms-transform: scale(1.2);
+    transform: scale(1.2);
+    transition: 1s ease;
+}
+.no-hover-img {
+    background-color: #212427;
+    -webkit-filter: grayscale(100%);
+    filter: grayscale(100%);
+    transition: 1s ease;
+}
+.Read-More {
+    background-color: #90EE90;
+}
+
+/* Show work page*/
+.work-container {
+    display: flex;
+    flex-direction: column; /* Style for mobile first principe */
+    justify-content: center;
+    margin-bottom: 3rem;
+}
+.show-work-item {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 1rem;
+}
+.show-work-item a {
+    text-decoration: none;
+    color: #212427;
+}
+.show-work-item li a:hover {
+    text-decoration: underline;
+}
+.show-work-item ul {
+    text-align: center;
+}
+/* Sets the order on the different elements */
+.aside-video {
+    order: 1;
+}
+.aside-text {
+    order: 2;
+}
+.aside-text p {
+    font-size: clamp(16px, 0.7vw + 10px, 20px);
+}
+.aside-role {
+    order: 3;
+    padding-bottom: 1rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+}
+.aside-tool {
+    order: 4;
+    padding-bottom: 1rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+}
+.aside-tool li {
+    font-size: clamp(16px, 0.7vw + 10px, 20px);
+}
+.aside-date {
+    order: 5;
+    padding-bottom: 1rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+}
+.work-video {
+    object-fit: cover; /* Make the thumbnail fit the videos propotions */
+    aspect-ratio: 16/9; /* Make the thumbnail fit the videos propotions */
+    cursor: url('../images/play.svg'), auto; /* Chenage the cursor to play icon */
+}
+/* Styles for aside sections on about page */
+.about-aside {
+    order: 4;
+    padding-bottom: 1rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+}
+.about-aside li {
+    font-size: clamp(16px, 0.7vw + 10px, 20px);
+}
+
+/* Styles all the buttons */
+.button {
+    display: flex;
+    justify-content: center; /* Center the button horizontally */
+    align-items: center;
+    border: solid #212427 1.5px;
+    height: 40px;
+    width: 200px;
+    border-radius: 4px;
+    text-decoration: none;
+    color: #212427;
+    transition: background-color 0.4s;
+}
+.button:hover {
+    background-color: #212427;
+    color: #90EE90;
+}
+/* Styles for the button container */
+.button-container {
+    display: flex;
+    justify-content: center; /* Center the button horizontally */
+}
+/* Buttons on show work page */
+.show-work-button {
+    display: flex;
+    justify-content: center; /* Center the button horizontally */
+    align-items: center;
+    border: solid #212427 1.5px;
+    height: 40px;
+    width: 100px;
+    border-radius: 4px;
+    text-decoration: none;
+    color: #212427;
+    transition: background-color 0.4s;
+    margin-right: 3rem;
+}
+.show-work-button:last-child {
+    margin-right: 0; /* Ta bort mellanrum efter den sista knappen */
+}
+.show-work-button:hover {
+    background-color: #212427;
+    color: #90EE90;
+}
+
+
+/* Styles for the footer */
+footer {
+    background-color: #212427;
+    color: #ffffff;
+    width: 100%;
+    height: 20rem;
+    margin-top: 3rem;
+}
+.footer-text {
+    text-align: center;
+    padding-top: 3rem;
+}
+footer a {
+    color: #ffffff;
+    text-decoration: none;
+}
+.adress {
+    font-size: small;
+}
+.creator {
+    margin-top: 3rem;
+    font-size: x-small;
+}
+.creator a:hover {
+    color: #90EE90;
+}
+.mail a, .number a, .adress {
+    color: #90EE90;
+}
+
+
+/* Design for mobile device */
+@media (max-width: 767px) {
+    /* Don't show the sticky email on mobile devices */
+    .sticky-mail {
+        display: none;
+    }
+    /* Show title and hamburger menu */
+    .header-text {
+        display: block;
+    }
+    .hamburger-menu {
+        display: block;
+    }
+    .top-nav a.icon {
+        z-index: 1;
+        color: #ffffff;
+        display: block;
+        position: absolute;
+        right: 0;
+        top: 0;
+    }
+    .top-nav {
+        overflow: hidden;
+        position: relative;
+        transition: background-color 0.5s ease; /* Smooth transition */
+    }
+    /* Change background color when menu is open */
+    .top-nav.open {
+        background-color: #212427; /* New background color when menu is open */
+        z-index: 2;
+        height: 100%;
+    }
+    .top-nav #myLinks {
+        margin-top: 3rem;
+    }
+    .describing-text {
+        font-weight: 500;
+    }
+
+    /* Sets the sizes of the thumbnail images of work on index page */
+    /* Decide how many columns there is based on the size of the images */
+    .work-img {
+        width: 300px;
+        height: 330px;
+    }
+    img {
+        width: 232px;
+    }
+    .about-img, .no-hover-img {
+        width: 300px;
+    }
+    
+    /* About info in index page */
+    .index-about {
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+    .img-and-text {
+        display: block;
+    }
+    .img-and-text, .services, .tools {
+        text-align: center;
+    }
+    .index-about-text {
+        width: 30rem;
+    }
+
+    /* Show work page */
+    .work-video, .work-text {
+        width: 380px;
+    }
+}
+
+
+/* Styles for tablet */
+@media (min-width: 768px) and (max-width: 991px) {
+    .top-nav #myLinks {
+        display: flex !important; /* Override the display property */
+    }
+    .header-large-screen {
+        display: block;
+    }
+    /* Makes the header gradient */
+    .header-large-screen a {
+        background: linear-gradient(#90EE90, #ffffff);
+        -webkit-background-clip: text;
+        background-clip: text;
+        -webkit-text-fill-color: transparent;
+        color: transparent;
+        font-family: 'Inconsolata';
+        font-size: 6vw;
+    }
+    .header-large-screen a:hover {
+        transform: none;
+    }
+    #myLinks {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .text-on-img {
+        top: 40%;
+    }
+
+    .work-img {
+        width: 300px;
+        height: 330px;
+    }
+
+    img {
+        width: 240px;
+        height: auto;
+    }
+    .about-img, .no-hover-img {
+        width: 300px;
+    }
+
+    /* About text on index page */
+    .index-about {
+        display: flex;
+        flex-wrap: wrap; /* Se till att innehållet kan wrapa till nästa rad om det behövs */
+        justify-content: space-between; /* Placera elementen jämnt fördelade över kontainer */
+    }
+
+    /* Show work page */
+    .work-video, .work-text {
+        width: 500px;
+    }
+    .work-container {
+        flex-flow: row wrap;
+    }
+    .aside-video {
+        flex: 0 0 100%;
+    }
+    .aside-text {
+        flex: 0 0 100%;
+    }
+    .aside-role {
+        flex: 0 0 45%;
+        order: 3;
+    }
+    .aside-tool {
+        flex: 0 0 45%;
+        order: 4;
+    }
+
+    .about-aside {
+        flex: 0 0 45%;
+    }
+
+}
+
+
+/* Styles for laptop */
+@media (min-width: 992px) and (max-width: 1299px) {
+    .top-nav #myLinks {
+        display: flex !important; /* Override the display property */
+    }
+    /* Duplicate the relevant styles from tablet media query */
+    .header-large-screen {
+        display: block;
+    }
+    /* Makes the header gradient */
+    .header-large-screen a {
+        background: linear-gradient(#90EE90, #ffffff);
+        -webkit-background-clip: text;
+        background-clip: text;
+        -webkit-text-fill-color: transparent;
+        color: transparent;
+        font-family: 'Inconsolata';
+        font-size: 6vw;
+    }
+    .header-large-screen a:hover {
+        transform: none;
+    }
+    #myLinks {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    /* Space between links in menu */
+    #myLinks a {
+        margin: 0 1rem 0 1rem;
+    }
+    .describing-text {
+        margin-top: 5rem;
+    }
+    .text-on-img {
+        top: 40%;
+    }
+
+    .work-img {
+        width: 315px;
+        height: 345px;
+    }
+
+    img {
+        width: 315px;
+    }
+    .about-img, .no-hover-img {
+        width: 350px;
+    }
+
+    /* About info on index page */
+    .index-about {
+        display: flex;
+        flex-wrap: wrap; /* Se till att innehållet kan wrapa till nästa rad om det behövs */
+        justify-content: space-between; /* Placera elementen jämnt fördelade över kontainer */
+    }
+
+    /* Show work page */
+    .work-video, .work-text {
+        width: 400px;
+    }
+    .work-container {
+        flex-flow: row wrap;
+    }
+    .aside-video {
+        flex: 0 0 45%;
+    }
+    .aside-text {
+        flex: 0 0 45%;
+        font-weight: 350;
+    }
+    .aside-role {
+        flex: 0 0 30%;
+        order: 3;
+    }
+    .aside-tool {
+        flex: 0 0 30%;
+        order: 4;
+    }
+    .aside-date {
+        flex: 0 0 30%;
+        order: 5;
+    }
+
+    .about-aside {
+        flex: 0 0 45%;
+    }
+}
+
+/* Styles for desktop*/
+@media (min-width: 1300px) {
+    .top-nav #myLinks {
+        display: flex !important; /* Override the display property */
+    }
+    .header-large-screen {
+        display: block;
+    }
+    /* Makes the header gradient */
+    .header-large-screen a {
+        background: linear-gradient(#90EE90, #ffffff);
+        -webkit-background-clip: text;
+        background-clip: text;
+        -webkit-text-fill-color: transparent;
+        color: transparent;
+        font-family: 'Inconsolata';
+        font-size: 90px;
+    }
+    .header-large-screen a:hover {
+        transform: none;
+    }
+    #myLinks {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    #myLinks a {
+        margin: 0 2rem 0 2rem;
+    }
+    .describing-text {
+        margin-top: 7rem;
+        font-weight: 350;
+    }
+    .text-on-img {
+        top: 40%;
+    }
+
+    /* Grid for biggest media query to controll the rows and columns */
+    .work {
+        display: grid;
+        grid-template-rows: 460px 460px;
+        grid-template-columns: 430px 430px 430px;
+        align-items: center;
+        justify-content: center;
+    }
+    .work-grid1 {
+        grid-row: 1;
+        grid-column: 1;
+    }
+    .work-grid2 {
+        grid-row: 1;
+        grid-column: 2;
+    }
+    .work-grid3 {
+        grid-row: 1;
+        grid-column: 3;
+    }
+    .work-grid4 {
+        grid-row: 2;
+        grid-column: 1;
+    }
+    .work-grid5 {
+        grid-row: 2;
+        grid-column: 2;
+    }
+    .work-grid6 {
+        grid-row: 2;
+        grid-column: 3;
+    }
+    .work-img {
+        width: 410px;
+        height: 440px;
+    }
+
+    img {
+        width: 350px;
+    }
+
+   /* About info on index page */
+    .work-container {
+        margin-top: 3rem;
+    }
+    .index-about {
+        display: flex;
+        flex-wrap: wrap; /* wrap if needed */
+        justify-content: space-between; /* places the object equal in the container */
+    }
+    .no-hover-img {
+        width: 450px;
+    }
+    .about-img {
+        width: 400px;
+    }
+
+    /* Show work page */
+    .work-video, .work-text {
+        width: 500px;
+    }
+    .work-container {
+        flex-flow: row wrap;
+    }
+    .aside-video {
+        flex: 0 0 45%;
+    }
+    .aside-text {
+        flex: 0 0 45%;
+        font-weight: 350;
+    }
+    .aside-role {
+        flex: 0 0 30%;
+        order: 3;
+    }
+    .aside-tool {
+        flex: 0 0 30%;
+        order: 4;
+    }
+    .aside-date {
+        flex: 0 0 30%;
+        order: 5;
+    }
+
+    .about-aside {
+        flex: 0 0 45%;
+    }
+}
