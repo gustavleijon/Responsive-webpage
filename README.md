@@ -4,6 +4,9 @@ Welcome to the Composer and Sound Designer Portfolio GitHub repository! This pro
 
 Features:
 Responsive Design: The portfolio webpage is optimized for various screen sizes and devices, ensuring a seamless experience for users on desktops, tablets, and mobile phones.
+
 Selected Work: Listen to the selected work created by the Composer and Sound Designer and find out information about the projects.
+
 About the Composer and Sound Designer: Read about how the Composer and Sound Designer is and what he is offering.
+
 Contact information: Connect with the Composer and sound designer for inquiries, collaborations, or to discuss potential projects.
